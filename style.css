@@ -6,6 +6,21 @@ font-family:'Poppins',sans-serif;
 }
 
 .overlay{
+    position:relative;
+    z-index:100;
+}
+
+.card{
+    position:relative;
+    z-index:101;
+}
+
+.balloon{
+    position:fixed;
+    z-index:10;
+}
+
+.overlay{
 
     position:relative;
 
