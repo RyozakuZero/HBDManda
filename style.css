@@ -720,7 +720,7 @@ button:hover{
 
     transition:.3s;
 
-    z-index:9999;
+    z-index:1000000;
 
 }
 
@@ -782,7 +782,7 @@ button:hover{
 
     transition:.35s;
 
-    z-index:99999;
+    z-index:1000000;
 
 }
 
