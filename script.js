@@ -1,77 +1,95 @@
+// =============================
+// LETTER POPUP
+// =============================
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const popup = document.getElementById("letterPopup");
     const btn = document.getElementById("letterBtn");
     const closeBtn = document.querySelector(".close");
 
+    // Buka surat
     btn.addEventListener("click", () => {
         popup.classList.add("show");
     });
 
+    // Tutup surat
     closeBtn.addEventListener("click", () => {
         popup.classList.remove("show");
     });
 
+    // Klik di luar surat
     popup.addEventListener("click", (e) => {
-        if(e.target === popup){
+        if (e.target === popup) {
             popup.classList.remove("show");
         }
     });
 
 });
 
-function bukaHadiah(){
 
-document.getElementById("gallerySection").style.display="block";
+// =============================
+// MEMORIES BUTTON
+// =============================
 
-window.scrollTo({
+function bukaHadiah() {
 
-top:document.getElementById("gallerySection").offsetTop,
+    const gallery = document.getElementById("gallerySection");
 
-behavior:"smooth"
+    gallery.style.display = "block";
 
-});
+    window.scrollTo({
+        top: gallery.offsetTop,
+        behavior: "smooth"
+    });
 
 }
+
+
+// =============================
+// BALLOON
+// =============================
 
 const balloons = document.querySelectorAll(".draggable");
 
 balloons.forEach(balloon => {
 
     let dragging = false;
+
     let offsetX = 0;
     let offsetY = 0;
 
-    let flying = true;
     let speed = 1 + Math.random() * 1.5;
 
-    // Posisi awal
-    let x = balloon.offsetLeft;
+    let x = Math.random() * (window.innerWidth - 60);
     let y = window.innerHeight + Math.random() * 300;
 
     balloon.style.left = x + "px";
     balloon.style.top = y + "px";
-    balloon.style.bottom = "auto";
     balloon.style.animation = "none";
 
     function animate() {
 
-        if (flying && !dragging) {
+        if (!dragging) {
 
             y -= speed;
-            x += Math.sin(Date.now() / 700 + speed) * 0.4;
 
-            // Kalau keluar layar, muncul lagi dari bawah
+            x += Math.sin(Date.now() / 700 + speed) * 0.5;
+
             if (y < -100) {
+
                 y = window.innerHeight + 100;
                 x = Math.random() * (window.innerWidth - 60);
+
             }
 
             balloon.style.left = x + "px";
             balloon.style.top = y + "px";
+
         }
 
         requestAnimationFrame(animate);
+
     }
 
     animate();
@@ -83,9 +101,10 @@ balloons.forEach(balloon => {
         offsetX = e.clientX - x;
         offsetY = e.clientY - y;
 
+        balloon.style.cursor = "grabbing";
+
         balloon.setPointerCapture(e.pointerId);
 
-        balloon.style.cursor = "grabbing";
     });
 
     balloon.addEventListener("pointermove", (e) => {
@@ -97,29 +116,15 @@ balloons.forEach(balloon => {
 
         balloon.style.left = x + "px";
         balloon.style.top = y + "px";
+
     });
 
     balloon.addEventListener("pointerup", () => {
 
         dragging = false;
-        flying = true;
 
         balloon.style.cursor = "grab";
 
     });
 
-})
-
-const popup = document.getElementById("letterPopup");
-const btn = document.getElementById("letterBtn");
-const closeBtn = document.querySelector(".close");
-
-btn.onclick = () => popup.classList.add("show");
-
-closeBtn.onclick = () => popup.classList.remove("show");
-
-popup.onclick = (e) => {
-    if (e.target === popup) {
-        popup.classList.remove("show");
-    }
-};
+});
