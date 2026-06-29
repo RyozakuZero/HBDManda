@@ -623,6 +623,16 @@ button:hover{
 
 @media (max-width:768px){
 
+        .letter-floating{
+
+        width:60px;
+        height:60px;
+
+        left:15px;
+        bottom:15px;
+
+        font-size:28px;
+        }
     .overlay{
         padding:15px;
         align-items:center;
