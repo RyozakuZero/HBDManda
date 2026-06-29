@@ -683,41 +683,74 @@ button:hover{
    LETTER BUTTON
 =========================== */
 
-.letter-btn{
+.letter-floating{
 
-    display:block;
+    position:fixed;
 
-    margin:50px auto;
+    left:25px;
+    bottom:25px;
 
-    background:#ff5f94;
+    width:70px;
+    height:70px;
 
-    color:white;
+    border-radius:50%;
 
-    padding:16px 35px;
+    background:linear-gradient(135deg,#ff6ea8,#ff4d88);
 
-    border:none;
+    display:flex;
 
-    border-radius:50px;
+    justify-content:center;
+    align-items:center;
+
+    font-size:34px;
 
     cursor:pointer;
 
-    font-size:18px;
-
-    font-weight:600;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 
     transition:.3s;
 
-}
-
-.letter-btn:hover{
-
-    transform:translateY(-4px);
+    z-index:9999;
 
 }
 
-/* ===========================
-   POPUP
-=========================== */
+.letter-floating:hover{
+
+    transform:scale(1.12);
+
+    box-shadow:0 15px 35px rgba(255,77,136,.45);
+
+}
+
+/* Efek mengambang */
+
+.letter-floating{
+
+    animation:floatLetter 2.5s ease-in-out infinite;
+
+}
+
+@keyframes floatLetter{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
 
 .popup{
 
