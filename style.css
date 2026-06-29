@@ -79,7 +79,7 @@ body{
 .balloon{
     position:fixed;
     font-size:50px;
-    z-index:99999;
+    z-index:50;
     cursor:grab;
     user-select:none;
     pointer-events:auto;
@@ -720,7 +720,7 @@ button:hover{
 
     transition:.3s;
 
-    z-index:1000000;
+    z-index:9999;
 
 }
 
@@ -782,7 +782,7 @@ button:hover{
 
     transition:.35s;
 
-    z-index:1000000;
+    z-index:10000;
 
 }
 
