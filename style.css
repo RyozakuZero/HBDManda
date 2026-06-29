@@ -536,3 +536,61 @@ box-shadow:0 10px 30px rgba(255,255,255,.4);
     line-height:1.6;
 
 }
+
+@media (max-width:768px){
+
+    .overlay{
+        padding:15px;
+        align-items:center;
+    }
+
+    .card{
+
+        width:100%;
+        max-width:380px;
+
+        padding:30px 22px;
+
+        border-radius:22px;
+
+    }
+
+    .top{
+
+        font-size:30px;
+
+    }
+
+    .bottom{
+
+        font-size:18px;
+
+    }
+
+    .typing{
+
+        font-size:32px;
+        white-space:normal;
+        width:100%;
+        border-right:none;
+        animation:none;
+
+    }
+
+    .card p{
+
+        font-size:16px;
+        line-height:1.7;
+
+    }
+
+    button{
+
+        width:100%;
+        padding:15px;
+
+        font-size:17px;
+
+    }
+
+}
